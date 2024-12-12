@@ -1,9 +1,14 @@
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv";
+dotenv.config();
 
 import { createReadStream, statSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
+
+const { PORT } = process.env;
+
 
 const _filename = fileURLToPath(import.meta.url);
 const _dirname = dirname(_filename);
@@ -50,6 +55,6 @@ app.get("/video", (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on http://localhost:3000");
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
