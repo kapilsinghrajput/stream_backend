@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/video", (req, res) => {
-  const filePath = join(_dirname, "public", "/10739358-hd_1920_1080_24fps.mp4");
+  const filePath = join(_dirname, "public", "/videoplayback (1).webm");
 
   try {
     const stat = statSync(filePath);
